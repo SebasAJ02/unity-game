@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "a45d72bc-d825-41f4-979e-76593bd5fca8",
-                    "path": "",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,10 +48,21 @@
                 {
                     "name": "",
                     "id": "df184761-616d-4de7-8259-ccc59fd0476d",
-                    "path": "",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
+                    "action": "Shield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "400f84a1-0aec-4ef4-bbc6-8eacf1cc5303",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Keyboard",
                     "action": "Shield",
                     "isComposite": false,
                     "isPartOfComposite": false
