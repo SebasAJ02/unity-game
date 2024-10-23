@@ -7,14 +7,36 @@ using UnityEngine.UIElements;
 public class CombatActions : MonoBehaviour
 {
     [Header("Sistema de Disparo")]
+    [SerializeField] private GameObject bullet;
     [SerializeField] private float fireRange;
 
     [Header("Escudo")]
 
     [SerializeField] private float shieldTime;
     [SerializeField] private float shieldCoolDown;
-    private bool shieldReady = true;
+    private float sTimer;
     [SerializeField] private GameObject shield;
+
+    private void Start()
+    {
+        sTimer = shieldCoolDown;
+    }
+
+    private void Update()
+    {
+        //Shield Cooldown
+        sTimer += Time.deltaTime;
+    }
+
+    //Mecanismo de Disparo
+
+    public void Shoot(InputAction.CallbackContext callback)
+    {
+        if(callback.performed)
+        {
+
+        }
+    }
 
     //Mecanismo de Escudo...
 
@@ -23,25 +45,22 @@ public class CombatActions : MonoBehaviour
         //Debug.Log("Antes if");
         if(callback.performed)
         {
-            //Debug.Log("Entro");
-            StartCoroutine(ShieldAction());
+            if(sTimer >= shieldCoolDown)
+            {
+                Debug.Log("Entro");
+                StartCoroutine(ShieldAction());
+            }
         }
     }
 
     public IEnumerator ShieldAction()
     {
         shield.SetActive(true);
-        shieldReady = false;
-        //Debug.Log("Se Activo Escudo");
+        Debug.Log("Se Activo Escudo");
         yield return new WaitForSeconds(shieldTime);
-        //Debug.Log("Se desactivo Escudo");
+        Debug.Log("Se desactivo Escudo");
         shield.SetActive(false);
-        StartCoroutine(ShieldAction());
+        sTimer = 0f;
     }
 
-    public IEnumerator ShieldRe()
-    {
-        yield return new WaitForSeconds(shieldCoolDown);
-        shieldReady = true;
-    }
 }

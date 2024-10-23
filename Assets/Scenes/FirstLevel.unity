@@ -401,8 +401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7084e4184abb423458e3793853f5b078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 696168674387798858, guid: 0af5c0bfb5c86d540bae976976018b0b, type: 3}
   fireRange: 0
-  shieldTime: 2
+  shieldTime: 1
+  shieldCoolDown: 3
   shield: {fileID: 1246535243}
 --- !u!1 &373213376
 GameObject:
